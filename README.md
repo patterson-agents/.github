@@ -1,2 +1,1 @@
-# .github
-Patterson Agents organization profile
+profile/README.md
