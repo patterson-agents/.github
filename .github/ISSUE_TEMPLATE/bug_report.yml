@@ -1,0 +1,37 @@
+name: Bug report
+description: Something is broken — a plugin, skill, workflow, or tool misbehaves.
+title: "bug: "
+labels: ["bug"]
+body:
+  - type: input
+    id: surface
+    attributes:
+      label: Where
+      description: The plugin, skill, command, or path involved (e.g. patterson-brand, scripts/generate).
+      placeholder: patterson-brand
+    validations:
+      required: true
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened
+      description: What you did, what you saw, and what you expected instead.
+      placeholder: Steps to reproduce, actual behaviour, expected behaviour.
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Harness and version if relevant.
+      placeholder: "Claude Code 2.1.x / Copilot CLI x.y — macOS/Linux"
+    validations:
+      required: false
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs or output
+      description: Relevant output, redacted of anything sensitive. Never paste credentials.
+      render: text
+    validations:
+      required: false
