@@ -102,24 +102,24 @@ Capability true for all of Patterson: the standards layer and the brand layer. T
 <details>
 <summary><code>patterson-engineering</code> — 7 skills</summary>
 
-- `cicd-pipeline-standards` — pipeline structure, gates, and required controls
-- `azure-environment-standards` — environment topology and naming
-- `azure-compute-standards` — compute selection and configuration
-- `storage-data-standards` — storage choice and data classification
-- `monitoring-alerting-standards` — observability and alerting requirements
-- `github-security-scanning` — required scanning configuration on GitHub
-- `approved-software-check` — is this tool approved for use at Patterson?
+- `cicd-pipeline-standards` — build/test/deploy pipelines, branch and PR policy, approvers, required scans, service connections, promotion to production
+- `azure-environment-standards` — the Sandbox / Dev / Test / Stage / Production tiers, subscriptions and landing zones, tagging and budgeting, DR requirements, exception approval
+- `azure-compute-standards` — VMs, VMSS, AVD, Windows 365, AKS, Container Apps and Instances, ACR, App Service; sizing, hardening, TLS, allowed base images
+- `storage-data-standards` — data classification (PII, HIPAA), encryption, identity, backup and retention, redundancy and DR for storage, SQL, Cosmos DB, and managed disks
+- `monitoring-alerting-standards` — the eight monitoring layers, PagerDuty routing, MTTD/MTTA/MTTR and DORA metrics, tool selection
+- `github-security-scanning` — CodeQL, Dependabot, secret scanning with push protection, and the security policy a repo is required to carry
+- `approved-software-check` — is this tool approved for use at Patterson? Reports approved / approval-required / unknown with the owning team
 
 </details>
 
 <details>
 <summary><code>patterson-brand</code> — 5 skills</summary>
 
-- `brand-identity` — logos, marks, and identity rules
-- `design-tokens` — the token set and its framework adapters
-- `copy-style-guide` — editorial mechanics and house style
-- `voice-and-tone` — voice per sub-brand
-- `presentation-templates` — on-brand decks and documents
+- `brand-identity` — the color palette and each color's role, logo usage and clear space, Proxima Nova typography, the mandatory sentence-case rule
+- `design-tokens` — drop-in Tailwind v4 `theme.css` plus a W3C `tokens.json`, and how to wire shadcn/ui to Patterson colors
+- `copy-style-guide` — editorial mechanics: AP style and Patterson's documented exceptions, numbers, dates, punctuation, product and business-unit naming
+- `voice-and-tone` — the corporate voice, the Patterson Dental marketing voice, and the social voice
+- `presentation-templates` — Patterson-branded PowerPoint, Word, and OfficeSuite deliverables; chart colors, slide structure, where the official templates live
 
 </details>
 
