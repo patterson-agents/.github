@@ -30,19 +30,29 @@ Patterson Companies holds a large body of institutional knowledge — engineerin
 This organization makes that knowledge **available to AI agents at the moment of use** — versioned, attributable, reviewable, and owned by the teams accountable for it. The organizing intent is that an agent working on Patterson code should behave the way a well-oriented Patterson colleague would: aware of the standards that apply, able to cite them, and able to say plainly when a standard does not cover the situation at hand. Every assertion traces to a source you can open. Where a source is silent, the silence is recorded as a gap rather than filled with a plausible invention — an invention quietly becomes policy, while an acknowledged gap prompts someone to go fix it.
 
 > [!NOTE]
-> Every repository in this organization is **private**. The links below resolve for org members; if a link 404s for you, you need access rather than a different URL.
+> The repositories in this organization are **public** as of 2026-08-12; several ship
+> live GitHub Pages sites (corp.patterson.sh, design.patterson.sh, docs.patterson.sh,
+> ds.patterson.sh, academy.pattersonskills.com, techdays.dev).
 
 ### The layered model
 
 Knowledge is not uniform. Some applies to all of Patterson; some only to a business segment, a department, a team, or a single repository. The marketplaces reflect that shape rather than flattening it.
 
-```text
-enterprise  ──  patterson-corp              true for all of Patterson
-   └─ sub-org  ──  patterson-dental · patterson-vet
-        └─ department  ──  plugins within a catalog
-             └─ team  ──  groupings and presets
-                  └─ repo  ──  .claude/settings.json beside the code
-                       └─ user  ──  individual preference
+```mermaid
+flowchart TD
+    E["enterprise<br/><b>patterson-corp</b><br/>true for all of Patterson"]
+    S["sub-org<br/><b>patterson-dental &middot; patterson-vet</b>"]
+    D["department<br/>plugins within a catalog"]
+    T["team<br/>groupings and presets"]
+    R["repo<br/><code>.claude/settings.json</code> beside the code"]
+    U["user<br/>individual preference"]
+
+    E -->|extends| S -->|extends| D -->|extends| T -->|extends| R -->|extends| U
+
+    classDef layer fill:#001B34,stroke:#0065FF,color:#DAEDF5,rx:6,ry:6
+    classDef leaf fill:#0C4676,stroke:#00A8E1,color:#DAEDF5,rx:6,ry:6
+    class E,S,D,T layer
+    class R,U leaf
 ```
 
 Lower layers **extend** what they inherit by default, and **may override** when they know better. Divergence is treated as information about where a parent standard is incomplete — not as a violation to suppress.
