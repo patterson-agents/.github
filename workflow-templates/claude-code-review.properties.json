@@ -1,0 +1,6 @@
+{
+  "name": "Claude Code Review",
+  "description": "Automated Claude review on pull requests using the org's Claude Code OAuth token.",
+  "iconName": "example-icon",
+  "categories": ["Code review", "Automation"]
+}

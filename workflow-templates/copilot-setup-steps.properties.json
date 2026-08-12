@@ -1,0 +1,6 @@
+{
+  "name": "Copilot setup steps",
+  "description": "Environment setup steps for the GitHub Copilot coding agent (node 24 toolchain).",
+  "iconName": "example-icon",
+  "categories": ["Automation"]
+}

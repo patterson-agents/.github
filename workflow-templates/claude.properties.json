@@ -1,0 +1,6 @@
+{
+  "name": "Claude Code",
+  "description": "Responds to @claude mentions in issues, PRs, and review comments using the org's Claude Code OAuth token.",
+  "iconName": "example-icon",
+  "categories": ["Automation"]
+}
