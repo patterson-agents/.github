@@ -1,10 +1,10 @@
 <div align="center">
 
-<img src="assets/banner.svg" width="100%" alt="Patterson Agents — AI agent platform for Patterson Companies">
+<img src="assets/banner.webp" width="100%" alt="Patterson Agents — AI agent platform for Patterson Companies">
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/patterson-logo-white.svg">
-  <img src="assets/patterson-logo-navy.svg" alt="Patterson Companies" width="240">
+  <source media="(prefers-color-scheme: dark)" srcset="assets/patterson-logo-white.webp">
+  <img src="assets/patterson-logo-navy.webp" alt="Patterson Companies" width="240">
 </picture>
 
 # patterson-agents
