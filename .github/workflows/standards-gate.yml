@@ -1,0 +1,76 @@
+# Patterson org standards gate.
+#
+# Reusable CI enforcement of the house standards that hooks enforce in-session:
+#   1. No Python files tracked.
+#   2. bun is the only package manager: no foreign lockfiles tracked.
+#   3. The June 2026 supply-chain denylist never appears in a dependency manifest.
+#
+# Call from any repository with:
+#
+#   jobs:
+#     standards:
+#       uses: patterson-agents/.github/.github/workflows/standards-gate.yml@main
+#
+# This is enforcement tier 3 (see patterson-corp/docs/architecture/org-enforcement.md):
+# it binds even when local hooks are disabled, once an org ruleset requires this check.
+#
+# The denylist pattern below is assembled from split halves so this file never contains a
+# denylisted name as a contiguous literal -- the same trick the in-session guard uses on its
+# own source, so guards and scanners never flag this workflow itself.
+name: standards-gate
+
+on:
+  workflow_call: {}
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  standards:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: No Python files tracked
+        shell: sh {0}
+        run: |
+          hits=$(git ls-files | grep -E '\.(py|pyw|pyi)$' || true)
+          if [ -n "$hits" ]; then
+            echo "Python files are not part of the Patterson toolchain. Rewrite in TypeScript or Nushell:"
+            echo "$hits" | sed 's/^/  /'
+            exit 1
+          fi
+          echo "OK: no Python files."
+
+      - name: No foreign lockfiles tracked
+        shell: sh {0}
+        run: |
+          hits=$(git ls-files | grep -E '(^|/)(package-lock\.json|npm-shrinkwrap\.json|yarn\.lock|pnpm-lock\.yaml)$' || true)
+          if [ -n "$hits" ]; then
+            echo "bun is the only approved package manager; bun.lock is the only lockfile. Remove:"
+            echo "$hits" | sed 's/^/  /'
+            exit 1
+          fi
+          echo "OK: no foreign lockfiles."
+
+      - name: Supply-chain denylist absent from manifests
+        shell: sh {0}
+        run: |
+          # June 2026 AUR supply-chain attack packages and their publisher.
+          pattern="atomic-""lockfile|js-""digest|lockfile""-js|nextfile""-js|herb""sobering"
+          manifests=$(git ls-files | grep -E '(^|/)(package\.json|bun\.lock|bunfig\.toml)$' || true)
+          hits=""
+          for f in $manifests; do
+            if grep -nE "$pattern" "$f" >/dev/null 2>&1; then
+              hits="$hits$f\n"
+            fi
+          done
+          if [ -n "$hits" ]; then
+            echo "Denylisted supply-chain package or publisher referenced in a manifest:"
+            printf "%b" "$hits" | sed 's/^/  /'
+            exit 1
+          fi
+          echo "OK: denylist absent from manifests."
