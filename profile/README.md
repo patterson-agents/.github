@@ -99,7 +99,7 @@ Nine repositories ship a [`.claude-plugin/marketplace.json`](https://code.claude
 | Catalog | Marketplace `name` | Status | Plugins | Skills |
 |---|---|---|---|---|
 | [`patterson-corp`](https://github.com/patterson-agents/patterson-corp) | `patterson-corp` | ![governed](https://img.shields.io/badge/governed-7BFF1B?labelColor=001B34) | 2 | 12 |
-| [`design-plugins`](https://github.com/patterson-agents/design-plugins) | [`patterson-design`](https://github.com/patterson-agents/design-plugins/tree/main/plugins/patterson-brand/skills/patterson-design) | ![governed](https://img.shields.io/badge/governed-7BFF1B?labelColor=001B34) | 9 | 9 |
+| [`design-plugins`](https://github.com/patterson-agents/design-plugins) | [`patterson-design`](https://github.com/patterson-agents/design-plugins/tree/main/plugins/patterson-brand/skills/patterson-design) | ![governed](https://img.shields.io/badge/governed-7BFF1B?labelColor=001B34) | 10 | 10 |
 | [`patterson-agencies-marketplace`](https://github.com/patterson-agents/patterson-agencies-marketplace) | `patterson-agencies` | ![incubating](https://img.shields.io/badge/incubating-00A8E1?labelColor=001B34) | 18 | 52 |
 | [`patterson-labs`](https://github.com/patterson-agents/patterson-labs) | `patterson-labs` | ![incubating](https://img.shields.io/badge/incubating-00A8E1?labelColor=001B34) | 2 | 3 |
 | [`patterson-marketplace`](https://github.com/patterson-agents/patterson-marketplace) | `patterson` | ![incubating](https://img.shields.io/badge/incubating-00A8E1?labelColor=001B34) | 1 | 2 |
@@ -153,11 +153,11 @@ Capability true for all of Patterson: the standards layer and the brand layer. T
 </details>
 
 <details>
-<summary><b><code>design-plugins</code></b> — design system · 9 plugins · marketplace name <code>patterson-design</code>&nbsp; <img src="https://img.shields.io/badge/governed-7BFF1B?labelColor=001B34" align="center"></summary>
+<summary><b><code>design-plugins</code></b> — design system · 10 plugins · marketplace name <code>patterson-design</code>&nbsp; <img src="https://img.shields.io/badge/governed-7BFF1B?labelColor=001B34" align="center"></summary>
 
 <br>
 
-The Patterson design system packaged as nine individually installable plugins. Each ships a skill, slash commands, a subagent, and a self-contained `ds/` design-system snapshot — no build step, no CDN. **Install [`patterson-brand`](https://github.com/patterson-agents/design-plugins/tree/main/plugins/patterson-brand) first**; the rest build on it. Repo: [patterson-agents/design-plugins](https://github.com/patterson-agents/design-plugins).
+The Patterson design system packaged as ten individually installable plugins. Each ships a skill, slash commands, a subagent, and a self-contained `ds/` design-system snapshot — no build step, no CDN. **Install [`patterson-brand`](https://github.com/patterson-agents/design-plugins/tree/main/plugins/patterson-brand) first**; the rest build on it. Repo: [patterson-agents/design-plugins](https://github.com/patterson-agents/design-plugins).
 
 | Plugin | What it is | Skill |
 |---|---|---|
@@ -169,7 +169,8 @@ The Patterson design system packaged as nine individually installable plugins. E
 | [**`patterson-storefront`**](https://github.com/patterson-agents/design-plugins/tree/main/plugins/patterson-storefront) `v1.1.0` | E-commerce storefront kit (pattern library v5.7.2 shell) with a Dental ↔ Veterinary brand toggle | [`storefront-kit`](https://github.com/patterson-agents/design-plugins/tree/main/plugins/patterson-storefront/skills/storefront-kit) |
 | [**`patterson-file-manager`**](https://github.com/patterson-agents/design-plugins/tree/main/plugins/patterson-file-manager) `v1.1.0` | "Skill Studio" application shell — top bar, sidebar tree, content grid; a template for internal tools | [`file-manager-template`](https://github.com/patterson-agents/design-plugins/tree/main/plugins/patterson-file-manager/skills/file-manager-template) |
 | [**`patterson-docs`**](https://github.com/patterson-agents/design-plugins/tree/main/plugins/patterson-docs) `v1.1.0` | Documentation-site package — VitePress + Diátaxis UI kit and a browser-openable page template | [`docs-site`](https://github.com/patterson-agents/design-plugins/tree/main/plugins/patterson-docs/skills/docs-site) |
-| [**`patterson-tutorialkit`**](https://github.com/patterson-agents/design-plugins/tree/main/plugins/patterson-tutorialkit) `v1.3.0` | Astro TutorialKit theme — runnable starter, canonical `theme.css`, and a 5-part / 18-lesson agent-tooling curriculum | [`tutorialkit-theme`](https://github.com/patterson-agents/design-plugins/tree/main/plugins/patterson-tutorialkit/skills/tutorialkit-theme) |
+| [**`patterson-starlight`**](https://github.com/patterson-agents/design-plugins/tree/main/plugins/patterson-starlight) `v0.1.2` | Runnable Astro 7 + Starlight documentation starter, install-verified with a committed `bun.lock` | [`starlight-site`](https://github.com/patterson-agents/design-plugins/tree/main/plugins/patterson-starlight/skills/starlight-site) |
+| [**`patterson-vitepress`**](https://github.com/patterson-agents/design-plugins/tree/main/plugins/patterson-vitepress) `v0.2.2` | Runnable VitePress documentation starter — Patterson theme, Diátaxis nav, starter content | [`vitepress-site`](https://github.com/patterson-agents/design-plugins/tree/main/plugins/patterson-vitepress/skills/vitepress-site) |
 
 ```bash
 /plugin marketplace add patterson-agents/design-plugins
@@ -338,7 +339,7 @@ The earliest Patterson marketplace, carrying a single [`patterson-design`](https
 | Repo | What it is |
 |---|---|
 | [**`patterson-academy`**](https://github.com/patterson-agents/patterson-academy) | Claude Code Academy — a self-contained static training deck covering `AGENTS.md`, commands, skills, plugins, MCP, hooks, and sandboxing. No build required. |
-| [**`lab-workshop`**](https://github.com/patterson-agents/lab-workshop) | TechDays: AI Fluency — Agentic Agents. A half-day hands-on lab: a 35-slide deck plus a [TutorialKit](https://tutorialkit.dev/) course of 5 parts / 18 lessons, and the [`skill-studio`](https://github.com/patterson-agents/lab-workshop/tree/main/skill-studio) prototype. No build required. |
+| [**`lab-workshop`**](https://github.com/patterson-agents/lab-workshop) | TechDays: AI Fluency — Agentic Agents. A half-day hands-on lab: a 35-slide deck plus an [Astro/Starlight](https://starlight.astro.build/) tutorial of 5 parts / 18 lessons published at [techdays.dev](https://techdays.dev/tutorial/1-agents-md/), and the [`skill-studio`](https://github.com/patterson-agents/lab-workshop/tree/main/skill-studio) prototype. No build required. |
 | [**`gh-aw-workshop`**](https://github.com/patterson-agents/gh-aw-workshop) | Fork of [`githubnext/gh-aw-workshop`](https://github.com/githubnext/gh-aw-workshop) — "Mona's Agent Factory," a hands-on workshop that builds a production-style [GitHub Agentic Workflow](https://gh.io/gh-aw) from scratch. Published docs: [githubnext.github.io/gh-aw-workshop](https://githubnext.github.io/gh-aw-workshop/). |
 | [**`agentics`**](https://github.com/patterson-agents/agentics) | Fork of [`githubnext/agentics`](https://github.com/githubnext/agentics) — a sample family of reusable agentic workflows (issue triage, Repo Assist, CI Doctor, CI Coach, Cost Tracker, AI Moderator) you can install today. Vendored so Patterson can pin a revision rather than track `main`. |
 
@@ -467,7 +468,7 @@ The interoperability layer. Worth understanding if you plan to build something d
 ### Design and authoring sources
 
 - [claude.ai/design](https://claude.ai/design) — the authoring surface behind [`patterson-design-system`](https://github.com/patterson-agents/patterson-design-system) and [`design-system`](https://github.com/patterson-agents/design-system)
-- [TutorialKit](https://tutorialkit.dev/) — the Astro framework behind [`patterson-tutorialkit`](https://github.com/patterson-agents/design-plugins/tree/main/plugins/patterson-tutorialkit) and the [`lab-workshop`](https://github.com/patterson-agents/lab-workshop) course
+- [Starlight](https://starlight.astro.build/) — the Astro docs framework behind [`patterson-starlight`](https://github.com/patterson-agents/design-plugins/tree/main/plugins/patterson-starlight) and the [`lab-workshop`](https://github.com/patterson-agents/lab-workshop) tutorial
 - [VitePress](https://vitepress.dev/) and [Diátaxis](https://diataxis.fr/) — the documentation model behind [`patterson-docs`](https://github.com/patterson-agents/design-plugins/tree/main/plugins/patterson-docs)
 - [Tailwind CSS v4](https://tailwindcss.com/) · [shadcn/ui](https://ui.shadcn.com/) · [UnoCSS](https://unocss.dev/) — the framework adapters shipped by [`patterson-brand`](https://github.com/patterson-agents/design-plugins/tree/main/plugins/patterson-brand)
 - [W3C Design Tokens Community Group format](https://tr.designtokens.org/format/) — the `tokens.json` schema
